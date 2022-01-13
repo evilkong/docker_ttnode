@@ -43,7 +43,7 @@ RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
     apt update -y
 
 # start.sh用脚本监控ttnode进程,不用cron
-RUN apt install -y cron net-tools qrencode inetutils-ping inetutils-traceroute procps && \
+RUN apt install -y cron net-tool jq qrencode inetutils-ping inetutils-traceroute procps && \
     # ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone && \
     rm -rf /tmp/* /var/tmp/* 

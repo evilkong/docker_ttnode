@@ -77,12 +77,12 @@ while true; do
 	if [ $num -lt 1 ]; then
 		d=$(date '+%F %T')
 		echo "[$d] ttnode进程不存在,启动ttnode"
-		/usr/node/ttnode -p /mnts -i /usr/node/uid.txt
+		/usr/node/ttnode -p /mnts -i /usr/node/uid.txt &
 		/usr/node/qr.sh
 	fi
 
 	if [ $foundport -eq 0 ]; then
-		netstat -tunlp | grep '/ttnode' | grep -v '127.0.0.1\|17331' | awk '{sub(/0.0.0.0:/,""); print $1,$4}' | sort -k 2n -k 1 >/usr/node/port.txt
+		netstat -tunlp | grep '/ttnode' | grep -v '127.0.0.1\|17331' | awk '{sub(/0.0.0.0:/,""); print $1,$4}' | sort -k 2n -k 1 > /usr/node/port.txt
 		len=$(sed -n '$=' /usr/node/port.txt)
 		if [[ $len -gt 4 ]]; then
 			new_port=$(cat /usr/node/port.txt)
