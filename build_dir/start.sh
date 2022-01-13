@@ -71,13 +71,13 @@ old_port=""
 while true; do
 	num=$(ps fax | grep '/ttnode' | egrep -v 'grep|echo|rpm|moni|guard' | wc -l)
 
-	echo $num >> /usr/node/test.txt;
-	echo $foundport >> /usr/node/test.txt;
+	# echo $num >> /usr/node/test.txt;
+	# echo $foundport >> /usr/node/test.txt;
 
 	if [ $num -lt 1 ]; then
 		d=$(date '+%F %T')
 		echo "[$d] ttnode进程不存在,启动ttnode"
-		/usr/node/ttnode -p /mnts -i /usr/node/uid.txt &
+		/usr/node/ttnode -p /mnts -i /usr/node/uid.txt & 
 		/usr/node/qr.sh
 	fi
 
