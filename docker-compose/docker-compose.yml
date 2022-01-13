@@ -4,7 +4,7 @@ services:
   ttnode:
     # 测试用
     # image: ericwang2006/ttnode:test
-    image: ericwang2006/ttnode
+    image: evilkong/ttnode
     # 内存限制
     mem_limit: 1024m
     container_name: ttnode

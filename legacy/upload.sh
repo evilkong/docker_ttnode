@@ -1,3 +1,3 @@
 #!/bin/sh
-docker push ericwang2006/ttnode:latest
-docker push ericwang2006/ttnode:armv7
+docker push evilkong/ttnode:latest
+docker push evilkong/ttnode:armv7

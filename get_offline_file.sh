@@ -9,7 +9,7 @@ function save_img() {
 	docker save $image_name:$tag | gzip >"$prefix"_"$2"_"$tag".tar.gz
 }
 
-image_name="ericwang2006/ttnode"
+image_name="evilkong/ttnode"
 tag="latest"
 prefix="ttnode"
 manifest=$(docker manifest inspect -v $image_name:$tag)

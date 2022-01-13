@@ -5,4 +5,4 @@ docker run -itd \
   --net=host \
   --privileged=true \
   --restart=always \
-  ericwang2006/ttnode:test
+  evilkong/ttnode:test
