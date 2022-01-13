@@ -97,8 +97,8 @@ while true; do
 
 				# lan_dev=$(find /sys/class/net -type l -not -lname '*virtual*' -printf '%f\n' | head -n 1)
 				lan_dev=$(route | grep defaul | awk '{print $8}' | head -n 1)
-				lan_ip=$(ifconfig $lan_dev | awk -F'[ ]+|:' '/inet /{print $4}')
-				lan_mask=$(ifconfig $lan_dev | awk -F'[ ]+|:' '/inet /{print $8}')
+				lan_ip=$(ifconfig $lan_dev | awk -F'[ ]+|:' '/inet /{print $3}')
+				lan_mask=$(ifconfig $lan_dev | awk -F'[ ]+|:' '/inet /{print $7}')
 
 				iptables_script="/usr/node/iptables.txt"
 				echo "# 如果路由器支持自定义防火墙,可以用以下命令代替端口转发设置" >$iptables_script
