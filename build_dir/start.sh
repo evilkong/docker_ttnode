@@ -77,7 +77,7 @@ while true; do
 	if [ $num -lt 1 ]; then
 		d=$(date '+%F %T')
 		echo "[$d] ttnode进程不存在,启动ttnode"
-		/usr/node/ttnode -p /mnts -i /usr/node/uid.txt & 
+		(/usr/node/ttnode -p /mnts -i /usr/node/uid.txt) & 
 		/usr/node/qr.sh
 	fi
 
